@@ -6,7 +6,7 @@ import LocationInfoBox from './LocationInfoBox'
 // define constants
 const NATURAL_EVENT_WILDFIRE = 8;
 
-const Map = ({ eventData, center, zoom }) => {
+const MapView = ({ eventData, center, zoom }) => {
     const [locationInfo, setLocationInfo] = useState(null)
 
     const markers = eventData.map((ev, index) => {
@@ -30,7 +30,7 @@ const Map = ({ eventData, center, zoom }) => {
     )
 }
 
-Map.defaultProps = {
+MapView.defaultProps = {
     center: {
         lat: 42.3265,
         lng: -122.8756
@@ -38,4 +38,4 @@ Map.defaultProps = {
     zoom: 6
 }
 
-export default Map
+export default MapView
