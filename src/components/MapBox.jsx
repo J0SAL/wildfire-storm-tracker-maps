@@ -4,11 +4,11 @@ import { useState } from 'react';
 import LocationInfoBox from './LocationInfoBox';
 import LocationMarker from './LocationMarker';
 
-
+const NATURAL_EVENT_WILDFIRE = 8;
 
 function MapBox({ eventData }) {
     const markers = eventData.map((ev, index) => {
-        if (ev.categories[0].id === 8) {
+        if (ev.categories[0].id === NATURAL_EVENT_WILDFIRE) {
             return <LocationMarker
                 key={index}
                 coordinates={ev.geometries[0].coordinates}

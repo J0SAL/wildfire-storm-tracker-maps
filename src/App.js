@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import MapView from "./components/Map";
 import Loader from "./components/Loader";
 import Header from "./components/Header";
 import MapBox from "./components/MapBox";
@@ -24,8 +23,7 @@ function App() {
   return (
     <div>
       <Header />
-      {/* {!loading ? <MapView eventData={eventData} /> : <Loader />} */}
-      <MapBox eventData={eventData} />
+      {!loading ? <MapBox eventData={eventData} /> : <Loader />}
     </div>
   );
 }

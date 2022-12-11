@@ -43,10 +43,11 @@ body {
 
 .loader img {
   width: 400px;
+  animation: rotation 4s infinite linear;
 }
 
 .loader h1 {
-  margin-top: -100px;
+  margin-top: -10px;
 }
 
 .location-info {
@@ -69,4 +70,17 @@ body {
 
 .location-info li {
   padding: 5px 0;
+}
+
+.rotate {
+  animation: rotation 2s infinite linear;
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
 }
