@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import Loader from "./components/Loader";
 import Header from "./components/Header";
 import MapBox from "./components/MapBox";
+import Footer from "./components/Footer";
 
 function App() {
   const [eventData, setEventData] = useState([]);
@@ -24,6 +25,7 @@ function App() {
     <div>
       <Header />
       {!loading ? <MapBox eventData={eventData} /> : <Loader />}
+      <Footer />
     </div>
   );
 }
