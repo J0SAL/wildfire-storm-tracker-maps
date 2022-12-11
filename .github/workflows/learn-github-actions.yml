@@ -1,0 +1,18 @@
+name: learn-github-actions
+run-name: ${{ github.actor }} is learning GitHub Actions
+on: [push]
+jobs:
+  check-bats-version:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "THe job was triggered by a ${{ github.event_name}} event."
+      - run: echo "This job is running on ${{ runner.os }} hosted by github!"
+      - run: echo "Your branch name is ${{github.ref}} of repo ${{ github.repository }}."
+      - name: Checkout repository code
+        uses: actions/checkout@v3
+      - run: echo "The ${{ github.repository }} repository has been cloned to runner."
+      - run: echo "The workflow is now ready to test"
+      - name: List files in a repository
+        run: |
+          ls ${{ github.workspace }}
+      - run: echo "The job's status is ${{ job.status}}."
