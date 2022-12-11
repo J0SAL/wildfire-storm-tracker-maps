@@ -1,11 +1,16 @@
 import { Icon } from '@iconify/react'
-import locationIcon from '@iconify/icons-mdi/fire-alert'
+import FireIcon from '@iconify/icons-mdi/fire-alert'
+import { Marker } from 'react-mapbox-gl'
 
-const LocationMarker = ({ lat, lng, onClick }) => {
+const LocationMarker = ({ coordinates, onClick }) => {
     return (
-        <div className="location-marker" onClick={onClick}>
-            <Icon icon={locationIcon} className="location-icon" />
-        </div>
+        <Marker
+            coordinates={coordinates}
+            anchor="bottom"
+            onClick={onClick}
+        >
+            <Icon icon={FireIcon} className="location-icon" />
+        </Marker>
     )
 }
 
