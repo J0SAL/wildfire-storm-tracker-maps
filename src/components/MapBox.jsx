@@ -5,13 +5,17 @@ import LocationInfoBox from './LocationInfoBox';
 import LocationMarker from './LocationMarker';
 
 const NATURAL_EVENT_WILDFIRE = 8;
+const SEVERE_STORMS = 10;
+
+
 
 function MapBox({ eventData }) {
     const markers = eventData.map((ev, index) => {
-        if (ev.categories[0].id === NATURAL_EVENT_WILDFIRE) {
+        if (ev.categories[0].id === NATURAL_EVENT_WILDFIRE || ev.categories[0].id === SEVERE_STORMS) {
             return <LocationMarker
                 key={index}
                 coordinates={ev.geometries[0].coordinates}
+                category={ev.categories[0].id}
                 onClick={() => setLocationInfo({ id: ev.id, title: ev.title, coordinates: ev.geometries[0].coordinates })}
             />
         }

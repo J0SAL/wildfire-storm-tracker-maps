@@ -33,6 +33,11 @@ body {
   color: red;
 }
 
+.storm-icon{
+  font-size: 2rem;
+  color: blue;
+}
+
 .loader {
   display: flex;
   flex-direction: column;
